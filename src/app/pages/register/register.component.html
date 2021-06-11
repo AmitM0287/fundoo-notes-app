@@ -1,0 +1,65 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+    <mat-card  fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div>
+            <mat-card-header class="form-header">
+                <mat-card-title>
+                    <h1>Fundoo Notes</h1>
+                    <h1>Create your Fundoo Account</h1>
+                </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content class="form-container" fxLayout="column" fxLayoutAlign="space-between start">
+                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+                    <mat-form-field id="firstName" appearance="outline">
+                        <mat-label>First name</mat-label>
+                        <input placeholder="Enter your first name" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field id="lastName" appearance="outline">
+                        <mat-label>Last name</mat-label>
+                        <input placeholder="Enter your last name" matInput required>
+                    </mat-form-field>
+                </div>
+                
+                <div>
+                    <mat-form-field id="email" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input placeholder="Enter your email" matInput required>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field id="username" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input placeholder="Enter your username" matInput required>
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+                    <mat-form-field id="password" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input placeholder="Enter your password" matInput required>
+                    </mat-form-field>
+
+                    <mat-form-field id="confirm" appearance="outline">
+                        <mat-label>Confirm</mat-label>
+                        <input placeholder="Confirm your password" matInput required>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-checkbox color="primary">Show password</mat-checkbox>
+                </div>
+            </mat-card-content>
+
+            <mat-card-actions class="form-actions" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="170px">
+                <button mat-button color="primary" (click)="login()">Have an account? Login</button>
+                <button mat-raised-button color="primary" (click)="register()">Register</button>
+            </mat-card-actions>
+        </div>
+
+        <div>
+            <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="connect to server" width="244" height="244">
+        </div>
+    </mat-card>
+</div>
