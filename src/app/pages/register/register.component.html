@@ -12,38 +12,39 @@
                 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
                     <mat-form-field id="firstName" appearance="outline">
                         <mat-label>First name</mat-label>
-                        <input placeholder="Enter your first name" matInput required>
+                        <input type="text" matInput [formControl]="firstName" placeholder="Enter your first name" required>
                     </mat-form-field>
 
                     <mat-form-field id="lastName" appearance="outline">
                         <mat-label>Last name</mat-label>
-                        <input placeholder="Enter your last name" matInput required>
+                        <input type="text" matInput [formControl]="lastName" placeholder="Enter your last name" required>
                     </mat-form-field>
                 </div>
                 
                 <div>
                     <mat-form-field id="email" appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input placeholder="Enter your email" matInput required>
+                        <input type="email" matInput [formControl]="email" placeholder="Enter your email" required>
+                        <mat-error *ngIf="email.invalid">{{validateEmail()}}</mat-error>
                     </mat-form-field>
                 </div>
 
                 <div>
                     <mat-form-field id="username" appearance="outline">
                         <mat-label>Username</mat-label>
-                        <input placeholder="Enter your username" matInput required>
+                        <input type="text" matInput [formControl]="username" placeholder="Enter your username" required>
                     </mat-form-field>
                 </div>
 
                 <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
                     <mat-form-field id="password" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input placeholder="Enter your password" matInput required>
+                        <input type="password" matInput [formControl]="password" placeholder="Enter your password" required>
                     </mat-form-field>
 
                     <mat-form-field id="confirm" appearance="outline">
                         <mat-label>Confirm</mat-label>
-                        <input placeholder="Confirm your password" matInput required>
+                        <input type="password" matInput [formControl]="confirm" placeholder="Confirm your password" required>
                     </mat-form-field>
                 </div>
 
@@ -53,8 +54,8 @@
             </mat-card-content>
 
             <mat-card-actions class="form-actions" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="170px">
-                <button mat-button color="primary" (click)="login()">Have an account? Login</button>
-                <button mat-raised-button color="primary" (click)="register()">Register</button>
+                <button type="submit" mat-button color="primary" (click)="login()">Have an account? Login</button>
+                <button type="submit" mat-raised-button color="primary" (click)="register()">Register</button>
             </mat-card-actions>
         </div>
 
