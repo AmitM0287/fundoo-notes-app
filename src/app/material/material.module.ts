@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const MaterialComponents = [
   MatCardModule,
@@ -19,6 +20,7 @@ const MaterialComponents = [
   ReactiveFormsModule,
   FormsModule,
   FlexLayoutModule,
+  MatSnackBarModule,
 ]
 
 @NgModule({
