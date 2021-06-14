@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -9,9 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class RegisterComponent implements OnInit {
   // Constructor
-  constructor(private service: UserService) { 
-
-  }
+  constructor(private service: UserService, private router: Router, private snackBar: MatSnackBar) { }
 
   // ngOnInit
   ngOnInit(): void { 
@@ -68,6 +68,15 @@ export class RegisterComponent implements OnInit {
     return '';
   }
 
+  // Reset form fields
+  resetForm() {
+    this.firstName.reset();
+    this.lastName.reset();
+    this.email.reset();
+    this.username.reset();
+    this.password.reset();
+  }
+
   // Register
   register() {
     this.service.registerUser({
@@ -75,17 +84,18 @@ export class RegisterComponent implements OnInit {
         "last_name": this.lastName.value,
         "email": this.email.value,
         "username": this.username.value,
-        "password": this.password.value}).subscribe((response) => {
-      console.log(response);
-      alert('Registration successful!');
-    }, (error) => {
-      console.log(error);
-    });
+        "password": this.password.value
+      }).subscribe((response) => { console.log(response); 
+        this.snackBar.open('Registration Successful!', '', {duration: 4000}); }, 
+      (error) => { console.log(error); 
+        this.snackBar.open('Registration Failed!', '', {duration: 4000}); });
+      // Reset form fields
+      this.resetForm();
   }
 
   // Login
   login() {
-    
+    this.router.navigateByUrl('login');
   }
 
 }
