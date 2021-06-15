@@ -16,9 +16,8 @@
                 <mat-form-field id="username" appearance="outline">
                     <mat-label>Username</mat-label>
                     <input type="text" [formControl]="username" pattern="^[A-Za-z0-9]{3,}$" placeholder="Enter your username" matInput required>
-                    <mat-hint>Only numbers & alphabets are allowed</mat-hint>
                     <mat-error *ngIf="username.invalid">{{validateUsername()}}</mat-error>
-                    <mat-error *ngIf="username.errors?.pattern">Invalid username</mat-error>
+                    <mat-error *ngIf="username.errors?.pattern">Only numbers & alphabets are allowed. Minimum length should be three.</mat-error>
                 </mat-form-field>    
             </div>
             
@@ -29,9 +28,8 @@
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
-                    <mat-hint>Only numbers & alphabets are allowed. Minimum length should be four digits.</mat-hint>
                     <mat-error *ngIf="password.invalid">{{validatePassword()}}</mat-error>
-                    <mat-error *ngIf="password.errors?.pattern">Invalid password</mat-error>
+                    <mat-error *ngIf="password.errors?.pattern">Only numbers & alphabets are allowed. Minimum length should be four digits.</mat-error>
                 </mat-form-field>
             </div>
         </mat-card-content>
