@@ -12,23 +12,21 @@
                 </mat-card-title>
             </mat-card-header>
 
-            <mat-card-content class="form-container" fxLayout="column" fxLayoutAlign="space-between start">
+            <mat-card-content class="form-container" fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="10px">
 
                 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
                     <mat-form-field id="firstName" appearance="outline">
                         <mat-label>First name</mat-label>
                         <input type="text" [formControl]="firstName" pattern="^[A-Za-z]{3,}$" placeholder="Enter your first name" matInput required>
-                        <mat-hint>Only alphabets are allowed</mat-hint>
                         <mat-error *ngIf="firstName.invalid">{{validateFirstName()}}</mat-error>
-                        <mat-error *ngIf="firstName.errors?.pattern">Invalid first name</mat-error>
+                        <mat-error *ngIf="firstName.errors?.pattern">Only alphabets are allowed. Minimum length should be three.</mat-error>
                     </mat-form-field>
 
                     <mat-form-field id="lastName" appearance="outline">
                         <mat-label>Last name</mat-label>
                         <input type="text" [formControl]="lastName" pattern="^[A-Za-z]{3,}$" placeholder="Enter your last name" matInput required>
-                        <mat-hint>Only alphabets are allowed</mat-hint>
                         <mat-error *ngIf="lastName.invalid">{{validateLastName()}}</mat-error>
-                        <mat-error *ngIf="lastName.errors?.pattern">Invalid Last name</mat-error>
+                        <mat-error *ngIf="lastName.errors?.pattern">Only alphabets are allowed. Minimum length should be three.</mat-error>
                     </mat-form-field>
                 </div>
                 
@@ -36,7 +34,6 @@
                     <mat-form-field id="email" appearance="outline">
                         <mat-label>Email</mat-label>
                         <input type="email" [formControl]="email" placeholder="Enter your email" matInput required>
-                        <mat-hint>Ex: example@gmail.com</mat-hint>
                         <mat-error *ngIf="email.invalid">{{validateEmail()}}</mat-error>
                     </mat-form-field>
                 </div>
@@ -45,9 +42,8 @@
                     <mat-form-field id="username" appearance="outline">
                         <mat-label>Username</mat-label>
                         <input type="text" [formControl]="username" pattern="^[A-Za-z0-9]{3,}$" placeholder="Enter your username" matInput required>
-                        <mat-hint>Only numbers & alphabets are allowed</mat-hint>
                         <mat-error *ngIf="username.invalid">{{validateUsername()}}</mat-error>
-                        <mat-error *ngIf="username.errors?.pattern">Invalid username</mat-error>
+                        <mat-error *ngIf="username.errors?.pattern">Only numbers & alphabets are allowed. Minimum length should be three.</mat-error>
                     </mat-form-field>
                 </div>
 
@@ -58,9 +54,8 @@
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
-                        <mat-hint>Only numbers & alphabets are allowed. Minimum length should be four digits.</mat-hint>
                         <mat-error *ngIf="password.invalid">{{validatePassword()}}</mat-error>
-                        <mat-error *ngIf="password.errors?.pattern">Invalid password</mat-error>
+                        <mat-error *ngIf="password.errors?.pattern">Only numbers & alphabets are allowed. Minimum length should be four digits.</mat-error>
                     </mat-form-field>
                 </div>
             </mat-card-content>
