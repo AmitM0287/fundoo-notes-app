@@ -9,16 +9,29 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   // URL
-  register_url = 'http://127.0.0.1:8000/user/register/';
-  login_url = 'http://127.0.0.1:8000/user/login/';
+  registerURL = 'http://127.0.0.1:8000/user/register/';
+  loginURL = 'http://127.0.0.1:8000/user/login/';
+  resetPasswordURL = 'http://127.0.0.1:8000/user/reset/password/';
+  forgotPasswordURL = 'http://127.0.0.1:8000/user/forgot/password/';
 
   // Register user
   registerUser(userData: any) {
-    return this.http.post(this.register_url, userData);
+    return this.http.post(this.registerURL, userData);
   }
 
   // Login user
   loginUser(userData: any) {
-    return this.http.post(this.login_url, userData);
+    return this.http.post(this.loginURL, userData);
   }
+
+  // Reset password
+  resetPassword(userData: any) {
+    return this.http.put(this.resetPasswordURL, userData);
+  }
+
+  // Forgot password
+  forgotPassword(userData: any) {
+    return this.http.post(this.forgotPasswordURL, userData);
+  }
+
 }
