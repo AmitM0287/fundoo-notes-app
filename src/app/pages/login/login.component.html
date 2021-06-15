@@ -36,9 +36,15 @@
             </div>
         </mat-card-content>
 
-        <mat-card-actions class="form-actions" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="150px">
-            <button type="submit" mat-button color="primary" (click)="createAccount()">Create account</button>
-            <button type="submit" mat-raised-button color="primary" (click)="login()">Login</button>
+        <mat-card-actions class="form-actions" fxLayout="column" fxLayoutAlign="space-between start">
+            <div>
+                <button type="submit" mat-button color="primary" (click)="forgotPassword()">Forgot password?</button>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="150px">
+                <button type="submit" mat-button color="primary" (click)="createAccount()">Create an account</button>
+                <button type="submit" mat-raised-button color="primary" (click)="login()">Login</button>
+            </div>
         </mat-card-actions>
     </mat-card>
 </div>
