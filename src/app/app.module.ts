@@ -11,6 +11,10 @@ import { TitleComponent } from './components/title/title.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CreateNotesComponent } from './components/create-notes/create-notes.component';
+import { IconsComponent } from './components/icons/icons.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
+    DashboardComponent,
+    HeaderComponent,
+    CreateNotesComponent,
+    IconsComponent,
   ],
   imports: [
     BrowserModule,
