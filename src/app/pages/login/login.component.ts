@@ -53,7 +53,8 @@ export class LoginComponent implements OnInit {
       "username": this.username.value,
       "password": this.password.value
     }).subscribe((response) => { console.log(response); 
-      this.snackBar.open('Login Successful!', '', {duration: 4000}); },
+      this.snackBar.open('Login Successful!', '', {duration: 4000}); 
+      this.router.navigateByUrl('dashboard') },
     (error) => { console.log(error); 
       this.snackBar.open('Login Failed!', '', {duration: 4000}); });
     // Reset form fields
