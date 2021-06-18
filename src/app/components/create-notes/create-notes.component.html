@@ -1,14 +1,20 @@
 <mat-accordion>
-    <mat-expansion-panel class="mat-expansion" hideToggle>
+    <mat-expansion-panel class="mat-expansion" hideToggle [expanded]="isExpanded">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 <input matInput placeholder="Title">
-                <span><mat-icon>push_pin</mat-icon></span>
+                <mat-icon fontSet="material-icons-outlined">push_pin</mat-icon>
             </mat-panel-title>
         </mat-expansion-panel-header>
-        <input matInput placeholder="Take a note...">
 
-        <app-icons></app-icons>
+        <div>
+            <input matInput placeholder="Take a note...">
+        </div>
+        
+        <div>
+            <app-icons></app-icons>
+            <button id="close" (click)="isExpanded = !isExpanded" mat-button>close</button>
+        </div>
     </mat-expansion-panel>
 </mat-accordion>
   

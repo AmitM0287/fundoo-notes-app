@@ -12,6 +12,7 @@ export class CreateNotesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  panelOpenState = false;
+  // Set isExpanded to false
+  isExpanded: boolean = false;
 
 }
