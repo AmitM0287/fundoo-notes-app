@@ -1,43 +1,44 @@
 <mat-toolbar class="toolbar">
     <button mat-icon-button (click)="isExpanded = !isExpanded">
-      <mat-icon>menu</mat-icon>
+      <mat-icon fontSet="material-icons-outlined">menu</mat-icon>
     </button>
+
     <span><img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="image not loaded" width="30px" height="30px"></span>
     <span><app-title></app-title></span>
 
     <mat-form-field id="search-bar" appearance="outline">
-      <mat-icon>search</mat-icon>
+      <mat-icon fontSet="material-icons-outlined">search</mat-icon>
       <span style="padding-left: 20px;"><input matInput placeholder="Search"></span>
     </mat-form-field>
     
-    <mat-icon id="profile">account_circle</mat-icon>
+    <mat-icon id="profile" fontSet="material-icons-outlined">account_circle</mat-icon>
 </mat-toolbar>
  
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" opened="opened">
     <mat-nav-list>
       <mat-list-item>
-        <mat-icon>lightbulb</mat-icon>
+        <mat-icon fontSet="material-icons-outlined">lightbulb</mat-icon>
         <span class="nav-items" *ngIf="isExpanded">Notes</span>
       </mat-list-item>
 
       <mat-list-item>
-        <mat-icon>notifications</mat-icon>
+        <mat-icon fontSet="material-icons-outlined">notifications</mat-icon>
         <span class="nav-items" *ngIf="isExpanded">Reminders</span>
       </mat-list-item>
 
       <mat-list-item>
-        <mat-icon>create</mat-icon>
+        <mat-icon fontSet="material-icons-outlined">create</mat-icon>
         <span class="nav-items" *ngIf="isExpanded">Edit labels</span>
       </mat-list-item>
 
       <mat-list-item>
-        <mat-icon>archive</mat-icon>
+        <mat-icon fontSet="material-icons-outlined">archive</mat-icon>
         <span class="nav-items" *ngIf="isExpanded">Archive</span>
       </mat-list-item>
 
       <mat-list-item>
-        <mat-icon>delete</mat-icon>
+        <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
         <span class="nav-items" *ngIf="isExpanded">Trash</span>
       </mat-list-item>
     </mat-nav-list>
