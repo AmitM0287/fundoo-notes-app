@@ -10,9 +10,13 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
   
   // Set isExpanded to false
   isExpanded: boolean = false;
+
+  // Getting username from local storage
+  username = localStorage.getItem('username')
 
 }

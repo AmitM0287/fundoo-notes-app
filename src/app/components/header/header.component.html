@@ -1,3 +1,5 @@
+<div class="line"></div>
+
 <mat-toolbar class="toolbar">
     <button mat-icon-button (click)="isExpanded = !isExpanded">
       <mat-icon fontSet="material-icons-outlined">menu</mat-icon>
@@ -6,14 +8,18 @@
     <span><img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="image not loaded" width="30px" height="30px"></span>
     <span><app-title></app-title></span>
 
-    <mat-form-field id="search-bar" appearance="outline">
+    <mat-form-field class="search-bar" appearance="outline">
       <mat-icon fontSet="material-icons-outlined">search</mat-icon>
       <span style="padding-left: 20px;"><input matInput placeholder="Search"></span>
     </mat-form-field>
     
-    <mat-icon id="profile" fontSet="material-icons-outlined">account_circle</mat-icon>
+    <button mat-icon-button class="profile">
+      <mat-icon fontSet="material-icons-outlined">account_circle</mat-icon>
+    </button>
 </mat-toolbar>
- 
+
+<div class="line"></div>
+
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" opened="opened">
     <mat-nav-list>
@@ -44,9 +50,9 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content class="content">
     <app-create-notes></app-create-notes>
+    <app-get-notes></app-get-notes>
   </mat-sidenav-content>
 
 </mat-sidenav-container>
-
