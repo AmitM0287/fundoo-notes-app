@@ -15,4 +15,9 @@ export class CreateNotesComponent implements OnInit {
   // Set isExpanded to false
   isExpanded: boolean = false;
 
+  // Close()
+  close() {
+    this.isExpanded = !this.isExpanded;
+  }
+
 }
