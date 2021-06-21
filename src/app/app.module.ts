@@ -15,6 +15,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CreateNotesComponent } from './components/create-notes/create-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { GetNotesComponent } from './components/get-notes/get-notes.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { IconsComponent } from './components/icons/icons.component';
     HeaderComponent,
     CreateNotesComponent,
     IconsComponent,
+    GetNotesComponent,
   ],
   imports: [
     BrowserModule,
