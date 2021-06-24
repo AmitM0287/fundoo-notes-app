@@ -1,0 +1,43 @@
+mat-toolbar {
+    background-color: white;
+    height: 10%;
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+.content {
+    margin-top: 1%;
+}
+
+.nav-items {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.search-bar {
+    width: 600px;
+    padding-left: 80px;
+    padding-top: 15px;
+}
+
+.profile {
+    margin-left: 30%;
+}
+
+.line {
+    width: 100%;
+    border: 0.1px solid darkgrey;
+}
+
+.mat-menu {
+    width: 160px;
+    padding-left: 25px;
+    margin-top: 10px;
+    padding-right: 12px;
+}
+
+.mat-stroked-button {
+    margin-left: 28px;
+}
