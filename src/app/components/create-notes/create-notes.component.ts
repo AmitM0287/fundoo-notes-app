@@ -15,8 +15,7 @@ export class CreateNotesComponent implements OnInit {
   // Set isExpanded to false
   isExpanded: boolean = false;
 
-  // Close()
-  close() {
+  togglePanel() {
     this.isExpanded = !this.isExpanded;
   }
 
