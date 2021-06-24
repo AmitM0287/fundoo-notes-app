@@ -1,7 +1,15 @@
-.container {
-    width: 225px;
-    height: fit-content;
-    margin-left: 12%;
+.main-box{
     margin-top: 2%;
-    padding-left: 1.5%;
+    margin-left: 11%;
+    display: flex;
+    flex-direction: row;
+}
+
+.card{
+    width: 240px;
+    flex-direction: column;
+}
+
+.box{
+    padding-left: 2%;
 }
