@@ -42,12 +42,12 @@ export class DashboardComponent implements OnInit {
 
   // archive
   archive() {
-
+    this.router.navigateByUrl('dashboard/archive');
   }
 
   // trash
   trash() {
-
+    this.router.navigateByUrl('dashboard/trash');
   }
   
 }
