@@ -2,19 +2,22 @@
     <mat-expansion-panel class="mat-expansion" hideToggle [expanded]="isExpanded">
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <input matInput placeholder="Title">
+                <input [formControl]="title" matInput placeholder="Title">
                 <mat-icon fontSet="material-icons-outlined">push_pin</mat-icon>
             </mat-panel-title>
         </mat-expansion-panel-header>
-
+        
         <div>
-            <input matInput placeholder="Take a note...">
+            <input [formControl]="description" matInput (click)="toggle()" placeholder="Take a note...">
         </div>
         
         <div>
             <app-icons></app-icons>
-            <button class="close" (click)="togglePanel()" mat-button>close</button>
+            <button class="close" (click)="close()" mat-button>close</button>
         </div>
     </mat-expansion-panel>
 </mat-accordion>
-  
+
+<div>
+    <app-get-notes></app-get-notes>
+</div>
