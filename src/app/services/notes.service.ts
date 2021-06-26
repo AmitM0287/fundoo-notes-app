@@ -20,4 +20,14 @@ export class NotesService {
     return this.http.get(environment.baseURL.concat('notes/'), {headers: this.httpHeaders});
   }
 
+  // Create notes
+  createNotes(notesData: any) {
+    return this.http.post(environment.baseURL.concat('notes/'), notesData, {headers: this.httpHeaders});
+  }
+
+  // Archive notes
+  archiveNotes(noteID: any) {
+    return this.http.post(environment.baseURL.concat('notes/is-archive/'), noteID);
+  }
+  
 }
