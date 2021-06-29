@@ -18,7 +18,10 @@ export class GetNotesComponent implements OnInit {
   // ngOnInit
   ngOnInit(): void {
     this.getNotes();
-    this.interaction.getNotes$.subscribe(() => {
+    this.interaction.createNote$.subscribe(() => {
+      this.getNotes();
+    });
+    this.interaction.removeNote$.subscribe(() => {
       this.getNotes();
     })
   }
@@ -31,7 +34,7 @@ export class GetNotesComponent implements OnInit {
       this.notes = response;
       this.notesArray = this.notes.data.notes_list.reverse();
       // Getting all notes successfully
-      this.snackBar.open("Getting all notes successfully.", '', {duration: 2000});
+      // this.snackBar.open("Getting all notes successfully.", '', {duration: 2000});
     },
     (error) => {
       console.log(error);

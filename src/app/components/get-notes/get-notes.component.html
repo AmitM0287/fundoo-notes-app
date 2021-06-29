@@ -1,10 +1,10 @@
 <div class="main-box">
     <ng-container *ngFor="let notes of notesArray">
         <div class="box" *ngIf="notes.isTrash == false && notes.isArchive == false">
-            <mat-card class="card" (click)="getNoteId(notes.id)">
+            <mat-card class="card">
                 <h4>{{ notes.title }}</h4>
                 <h4>{{ notes.description }}</h4>
-                <app-icons [noteId]="noteId"></app-icons>
+                <app-icons (click)="getNoteId(notes.id);" [noteId]="noteId"></app-icons>
             </mat-card>
         </div>
     </ng-container>
