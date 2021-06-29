@@ -50,7 +50,7 @@ export class CreateNotesComponent implements OnInit {
     }).subscribe((response) => {
       // Notes created successfully
       this.snackBar.open("Notes created successfully.", '', {duration: 2000});
-      this.interaction.sendNewContent('New note');
+      this.interaction.sendContent('Created note.');
     }, (error) => {
       // Notes creation failed
       this.snackBar.open("Notes creation failed.", '', {duration: 2000});
