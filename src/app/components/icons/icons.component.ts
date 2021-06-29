@@ -9,6 +9,7 @@ import { InteractionService } from 'src/app/services/interaction.service';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
+  // noteId
   @Input() noteId: any;
 
   // Constructor
@@ -24,9 +25,22 @@ export class IconsComponent implements OnInit {
       "note_id": this.noteId
     }).subscribe((response) => {
       this.snackBar.open('Note archived successfully!', '', {duration: 2000});
-      this.interaction.sendNewContent('Archive note');
+      this.interaction.sendContent('Archive note');
     }, (error) => {
       this.snackBar.open('Note archived failed!', '', {duration: 2000});
     });
   }
+
+  // trashNote
+  trashNote() {
+    this.service.trashNotes({
+      "note_id": this.noteId
+    }).subscribe((response) => {
+      this.snackBar.open('Note trashed successfully!', '', {duration: 2000});
+      this.interaction.removeContent('Trash note');
+    }, (error) => {
+      this.snackBar.open('Note trashed failed!', '', {duration: 2000});
+    });
+  }
+
 }
