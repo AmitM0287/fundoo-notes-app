@@ -17,6 +17,7 @@ import { IconsComponent } from './components/icons/icons.component';
 import { GetNotesComponent } from './components/get-notes/get-notes.component';
 import { IsTrashedComponent } from './components/is-trashed/is-trashed.component';
 import { IsArchivedComponent } from './components/is-archived/is-archived.component';
+import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { IsArchivedComponent } from './components/is-archived/is-archived.compon
     GetNotesComponent,
     IsTrashedComponent,
     IsArchivedComponent,
+    UpdateNotesComponent,
   ],
   imports: [
     BrowserModule,
