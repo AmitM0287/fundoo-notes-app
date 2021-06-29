@@ -1,1 +1,14 @@
-<p>update-notes works!</p>
+<div>
+    <div class="title">
+        <input matInput [(ngModel)]="dialogData.noteData.title">
+    </div>
+
+    <div class="description">
+        <input matInput [(ngModel)]="dialogData.noteData.description">
+    </div>
+    
+    <div>
+        <app-icons></app-icons>
+        <button class="close" [mat-dialog-close]="true" (click)="close()" mat-button>close</button>
+    </div>
+</div>
