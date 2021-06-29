@@ -4,7 +4,15 @@
             <mat-card class="card">
                 <h4>{{ notes.title }}</h4>
                 <h4>{{ notes.description }}</h4>
-                <app-icons></app-icons>
+                <div>
+                    <button mat-icon-button class="icons" (click)="getNoteId(notes.id); unArchiveNote();">
+                        <mat-icon fontSet="material-icons-outlined">unarchive</mat-icon>
+                    </button>
+
+                    <button mat-icon-button class="icons" (click)="getNoteId(notes.id); trashArchiveNote();">
+                        <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
+                    </button>
+                </div>
             </mat-card>
         </div>
     </ng-container>
