@@ -50,4 +50,9 @@ export class NotesService {
     return this.http.delete(environment.baseURL.concat('notes/'), noteId);
   }
   
+  // Update notes
+  updateNotes(notedata: any) {
+    return this.http.put(environment.baseURL.concat('notes/'), notedata);
+  }
+  
 }
