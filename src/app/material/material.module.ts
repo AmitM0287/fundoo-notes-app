@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const MaterialComponents = [
   MatCardModule,
@@ -31,6 +32,7 @@ const MaterialComponents = [
   MatListModule,
   MatExpansionModule,
   MatMenuModule,
+  MatDialogModule,
 ]
 
 @NgModule({
