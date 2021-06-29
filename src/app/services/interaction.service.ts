@@ -5,14 +5,34 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class InteractionService {
-
+  // Constructor
   constructor() { }
 
-  private interaction = new Subject<string>();
-  getNotes$ = this.interaction.asObservable();
+  // Create notes interaction
+  private interactionCreateNote = new Subject<string>();
+  createNote$ = this.interactionCreateNote.asObservable();
 
-  sendNewContent(message: string){
-    this.interaction.next(message);
+  // Remove notes interaction
+  private interactionRemoveNote = new Subject<string>();
+  removeNote$ = this.interactionRemoveNote.asObservable();
+
+  // Delete notes interaction
+  private interactionDeleteNote = new Subject<string>();
+  deleteNote$ = this.interactionDeleteNote.asObservable();
+
+  // send content
+  sendContent(message: string){
+    this.interactionCreateNote.next(message);
   }
 
+  // remove content
+  removeContent(message: string){
+    this.interactionRemoveNote.next(message);
+  }
+
+  // delete content
+  deleteContent(message: string){
+    this.interactionDeleteNote.next(message);
+  }
+  
 }
