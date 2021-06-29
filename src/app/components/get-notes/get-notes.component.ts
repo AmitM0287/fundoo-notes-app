@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NotesService } from 'src/app/services/notes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { InteractionService } from 'src/app/services/interaction.service';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 
 @Component({
   selector: 'app-get-notes',
@@ -13,7 +15,7 @@ export class GetNotesComponent implements OnInit {
   noteId: any;
 
   // Constructor
-  constructor(private service: NotesService, private snackBar: MatSnackBar, private interaction: InteractionService) { }
+  constructor(private service: NotesService, private snackBar: MatSnackBar, private interaction: InteractionService, private dialog: MatDialog) { }
 
   // ngOnInit
   ngOnInit(): void {
@@ -45,6 +47,13 @@ export class GetNotesComponent implements OnInit {
   // Get note id
   getNoteId(id: string) {
     this.noteId = id;
+  }
+
+  // Update note
+  updateNotes(noteData: any) {
+    this.dialog.open(UpdateNotesComponent, {
+      data: { noteData }
+    });
   }
 
 }
