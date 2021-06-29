@@ -30,8 +30,6 @@ export class IsArchivedComponent implements OnInit {
     this.service.getNotes().subscribe((response) => {
     this.notes = response;
     this.notesArray = this.notes.data.notes_list.reverse();
-    // Getting archive notes successfully
-    // this.snackBar.open("Getting archive notes successfully.", '', {duration: 2000});
     },
     (error) => {
       console.log(error);
