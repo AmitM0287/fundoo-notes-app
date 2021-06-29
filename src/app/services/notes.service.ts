@@ -26,8 +26,28 @@ export class NotesService {
   }
 
   // Archive notes
-  archiveNotes(noteID: any) {
-    return this.http.post(environment.baseURL.concat('notes/is-archive/'), noteID);
+  archiveNotes(noteId: any) {
+    return this.http.post(environment.baseURL.concat('notes/is-archive/'), noteId);
+  }
+
+  // unArchive notes
+  unArchiveNotes(noteId: any) {
+    return this.http.post(environment.baseURL.concat('notes/is-archive/'), noteId);
+  }
+  
+  // Trash notes
+  trashNotes(noteId: any) {
+    return this.http.post(environment.baseURL.concat('notes/is-trash/'), noteId);
+  }
+  
+  // Restore notes
+  restoreNotes(noteId: any) {
+    return this.http.post(environment.baseURL.concat('notes/is-trash/'), noteId);
+  }
+
+  // Delete notes
+  deleteNotes(noteId: any) {
+    return this.http.delete(environment.baseURL.concat('notes/'), noteId);
   }
   
 }
