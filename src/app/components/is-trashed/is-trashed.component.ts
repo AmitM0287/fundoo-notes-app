@@ -61,7 +61,7 @@ export class IsTrashedComponent implements OnInit {
     this.service.deleteNotes({
       "note_id": this.noteId
     }).subscribe((response) => {
-      this.snackBar.open('Note restored successfully!', '', {duration: 2000});
+      this.snackBar.open('Note deleted permanently!', '', {duration: 2000});
       this.interaction.deleteContent('Delete note');
     }, (error) => {
       this.snackBar.open('Note deletion failed!', '', {duration: 2000});
