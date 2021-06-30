@@ -35,8 +35,6 @@ export class GetNotesComponent implements OnInit {
     this.service.getNotes().subscribe((response) => {
       this.notes = response;
       this.notesArray = this.notes.data.notes_list.reverse();
-      // Getting all notes successfully
-      // this.snackBar.open("Getting all notes successfully.", '', {duration: 2000});
     },
     (error) => {
       console.log(error);
