@@ -47,7 +47,7 @@ export class NotesService {
 
   // Delete notes
   deleteNotes(noteId: any) {
-    return this.http.delete(environment.baseURL.concat('notes/'), noteId);
+    return this.http.delete(environment.baseURL.concat('notes/'+ noteId.note_id + '/'));
   }
   
   // Update notes
