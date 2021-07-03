@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { IconsComponent } from './icons.component';
 
@@ -8,7 +11,12 @@ describe('IconsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IconsComponent ]
+      declarations: [ IconsComponent ],
+      imports: [
+        MatSnackBarModule,
+        HttpClientTestingModule,
+        MatMenuModule,
+      ],
     })
     .compileComponents();
   });
