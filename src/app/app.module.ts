@@ -18,6 +18,10 @@ import { GetNotesComponent } from './components/get-notes/get-notes.component';
 import { IsTrashedComponent } from './components/is-trashed/is-trashed.component';
 import { IsArchivedComponent } from './components/is-archived/is-archived.component';
 import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
+import { AuthGurdService } from './services/auth-gurd.service';
+import { InteractionService } from './services/interaction.service';
+import { NotesService } from './services/notes.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,12 @@ import { UpdateNotesComponent } from './components/update-notes/update-notes.com
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [
+    AuthGurdService,
+    InteractionService,
+    NotesService,
+    UserService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
