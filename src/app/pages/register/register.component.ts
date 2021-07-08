@@ -78,6 +78,8 @@ export class RegisterComponent implements OnInit {
   }
 
   // Register
+  successMsg: any;
+  errorMsg: any;
   register() {
     this.service.registerUser({
         "first_name": this.firstName.value,
@@ -85,10 +87,13 @@ export class RegisterComponent implements OnInit {
         "email": this.email.value,
         "username": this.username.value,
         "password": this.password.value
-      }).subscribe((response) => { console.log(response); 
-        this.snackBar.open('Registration Successful!', '', {duration: 4000}); }, 
-      (error) => { console.log(error); 
-        this.snackBar.open('Registration Failed!', '', {duration: 4000}); });
+      }).subscribe((response) => {
+        this.successMsg = response;
+        this.snackBar.open(this.successMsg.message, '', {duration: 4000});
+        this.login(); }, 
+      (error) => { 
+        this.errorMsg = error;
+        this.snackBar.open(this.errorMsg.error.message, '', {duration: 4000}); });
       // Reset form fields
       this.resetForm();
   }

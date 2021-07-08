@@ -43,17 +43,30 @@ export class CreateNotesComponent implements OnInit {
   }
 
   // Create note
+  successMsg: any;
+  errorMsg: any;
   createNote() {
     this.service.createNotes({
       'title': this.title.value,
       'description': this.description.value
     }).subscribe((response) => {
+      this.successMsg = response;
+      console.log(this.successMsg);
       // Notes created successfully
       this.snackBar.open("Notes created successfully.", '', {duration: 2000});
       this.interaction.sendContent('Created note.');
     }, (error) => {
-      // Notes creation failed
-      this.snackBar.open("Notes creation failed.", '', {duration: 2000});
+      this.errorMsg = error;
+      if (this.errorMsg.error.message.title == 'Ensure this field has at least 4 characters.' || this.errorMsg.error.message.title == 'This field may not be null.' || this.errorMsg.error.message.title == 'This field may not be blank.') {
+        this.snackBar.open(this.errorMsg.error.message.title, '', {duration: 2000});
+
+      } else if( this.errorMsg.error.message.description == 'Ensure this field has at least 4 characters.' || this.errorMsg.error.message.description == 'This field may not be null.' || this.errorMsg.error.message.description == 'This field may not be blank.') {
+        this.snackBar.open(this.errorMsg.error.message.description, '', {duration: 2000});
+
+      } else {
+        this.snackBar.open(this.errorMsg.error.message, '', {duration: 2000});
+      }
+      
     });
   }
 
