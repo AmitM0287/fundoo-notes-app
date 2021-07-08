@@ -48,23 +48,25 @@ export class LoginComponent implements OnInit {
   }
 
   // Login
-  user_data: any;
+  successMsg: any;
+  errorMsg: any;
   login() {
     this.service.loginUser({
       "username": this.username.value,
       "password": this.password.value
     }).subscribe((response) => {
-        this.user_data = response;
+        this.successMsg = response;
         // Set username & token into local storage
-        localStorage.setItem('username', this.user_data.data.username);
-        localStorage.setItem('token', this.user_data.data.token);
+        localStorage.setItem('username', this.successMsg.data.username);
+        localStorage.setItem('token', this.successMsg.data.token);
         // Show Login successful message
-        this.snackBar.open('Login Successful!', '', {duration: 4000}); 
+        this.snackBar.open(this.successMsg.message, '', {duration: 4000}); 
         this.router.navigateByUrl('dashboard') },
       (error) => {
-        this.snackBar.open('Login Failed!', '', {duration: 4000}); });
+        this.errorMsg = error;
+        this.snackBar.open(this.errorMsg.error.message, '', {duration: 4000}); });
         // Reset form fields
-        this.resetForm()
+        this.resetForm();
   }
 
   // Create account
